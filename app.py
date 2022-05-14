@@ -106,6 +106,32 @@ def assemblyAI():
 
     return polling_response.json()
 
+def emailSend():
+    toEmail = request.json['toEmail']
+    message = Mail(
+        from_email='fruitwingteardrop.2000@gmail.com ',
+        to_emails=toEmail,
+        subject='Curated notes :) ',
+        html_content='As you requested here it is!')
+    with open('output.pdf', 'rb') as f:
+        data = f.read()
+        f.close()
+    encoded_file = base64.b64encode(data).decode()
+
+    attachedFile = Attachment(
+    FileContent(encoded_file),
+    FileName('attachment.pdf'),
+    FileType('application/pdf'),
+    Disposition('attachment')
+    )
+    message.attachment = attachedFile
+    sg = SendGridAPIClient(os.getenv("SENDGRID_API_KEY"))
+    response = sg.send(message)
+    print(response.status_code)
+    print(response.body)
+    print(response.headers)
+    return {'message': "Email Sent - Powered by Twillio"}
+    
 if __name__ == "__main__":
     app.secret_key = os.urandom(24)
     CORS(app, expose_headers='Authorization')
