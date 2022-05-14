@@ -6,11 +6,7 @@ const Transcript = ({ analysisInfo }) => {
   const [buttonType, setButtonType] = useState(1);
   const [originalResultData, setOriginalResultData] = useState([]);
   const [filterResultData, setFilterResultData] = useState([]);
-  // const [topics, setTopics] = useState([]);
-  // const [filterTopics, setFilterTopics] = useState([]);
   const [email, setEmail] = useState("");
-  // analysisInfo &&
-  //   setOriginalResultData(analysisInfo['iab_categories_result']['results']);
 
   useEffect(() => {
     setOriginalResultData(analysisInfo["iab_categories_result"]["results"]);
@@ -31,15 +27,13 @@ const Transcript = ({ analysisInfo }) => {
       body: JSON.stringify({ toEmail: email }),
     });
     let json = await response.json();
-
+    console.log(json);
     setEmail("");
   };
 
   const handleEmailInput = (e) => {
     setEmail(e.target.value);
   };
-
-  // analysisInfo && console.log(analysisInfo['iab_categories_result']['results']);
 
   return (
     <div>
