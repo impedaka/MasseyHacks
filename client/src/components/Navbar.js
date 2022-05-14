@@ -21,6 +21,7 @@ import {
   ChevronDownIcon,
   ChevronRightIcon,
 } from "@chakra-ui/icons";
+import { NavLink } from "react-router-dom";
 
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
@@ -57,7 +58,9 @@ export default function Navbar() {
             fontFamily={"heading"}
             color="white"
           >
-            Logo
+            <Link href="/">
+              <a>SumNotes</a>
+            </Link>
           </Text>
         </Flex>
 
@@ -232,15 +235,15 @@ interface NavItem {
 
 const NAV_ITEMS: Array<NavItem> = [
   {
-    label: "Learn Design",
+    label: "Video Sum",
     href: "#",
   },
   {
-    label: "Hire Designers",
+    label: "Speech Sum",
     href: "#",
   },
   {
-    label: "Hire Designers",
+    label: "Handwriting Sum",
     href: "#",
   },
 ];
