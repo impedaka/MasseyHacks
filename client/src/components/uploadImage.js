@@ -1,3 +1,13 @@
+import {
+  Box,
+  Button,
+  Center,
+  Container,
+  Heading,
+  Input,
+  Text,
+  VStack,
+} from "@chakra-ui/react";
 import React, { useState } from "react";
 
 const UploadImage = ({ setAnalysisInfo, analysisInfo }) => {
@@ -70,64 +80,60 @@ const UploadImage = ({ setAnalysisInfo, analysisInfo }) => {
   };
 
   return (
-    <div className="main-container">
-      <div className="upload-headline">
-        Create your{" "}
-        <span className="upload-headline-emphasized">interactive</span> notes.
-      </div>
-      <div className="upload-subtitle">
-        Build your annotated and dynamic transcript in{" "}
-        <span className="upload-subtitle-emphasized">one click.</span>
-      </div>
-      <div className="drag-drop-container">
-        {!loading && (
-          <>
-            <div className="file-upload-container">
-              <input
-                className="input-link"
-                type="text"
-                value={link}
-                placeholder="Enter a Youtube URL or choose a file..."
-                onChange={(e) => {
-                  setLink(e.target.value);
-                }}
-              />
-              {!link && (
-                <>
-                  <label for="file-upload" className="choose-file-button">
-                    Select File
-                  </label>
-                  <input
-                    className="no-display"
-                    id="file-upload"
-                    type="file"
-                    accept=".mp4"
-                    onChange={(e) => handleFileUpload(e)}
-                  />
-                </>
-              )}
-              {link && (
-                <>
-                  <label
-                    className="choose-file-button"
-                    onClick={handleYoutubeLink}
-                  >
-                    Analyze
-                  </label>
-                </>
-              )}
-            </div>
-            or drop files here.
-          </>
-        )}
-        {loading && (
-          <div>
-            <label className="loading-message">{loadingMessage}</label>
-          </div>
-        )}
-      </div>
-      {analysisInfo && <div className="down-arrow"></div>}
-    </div>
+    <Container maxW={"container.md"} mt="10" p="4" centerContent={"true"}>
+      <VStack spacing="25px">
+        <Heading size="2xl">Video Sum</Heading>
+        <Text>Connect your video/lecture via link or file upload</Text>
+        <Box bg="blue.100" borderRadius={"md"} p="8">
+          <VStack spacing="25px">
+            {!loading && (
+              <>
+                <Text>Video Link</Text>
+                <Input
+                  bg="white"
+                  className="input-link"
+                  type="text"
+                  value={link}
+                  onChange={(e) => {
+                    setLink(e.target.value);
+                  }}
+                />
+                {!link && (
+                  <Box>
+                    <Text>Select File</Text>
+                    <input
+                      className="no-display"
+                      id="file-upload"
+                      type="file"
+                      accept=".mp4"
+                      onChange={(e) => handleFileUpload(e)}
+                    />
+                  </Box>
+                )}
+                {link && (
+                  <>
+                    <Button
+                      bg="green.100"
+                      className="choose-file-button"
+                      onClick={handleYoutubeLink}
+                    >
+                      Analyze
+                    </Button>
+                  </>
+                )}
+              </>
+            )}
+            {loading && (
+              <div>
+                <label className="loading-message">{loadingMessage}</label>
+              </div>
+            )}
+          </VStack>
+        </Box>
+
+        {analysisInfo && <div className="down-arrow"></div>}
+      </VStack>
+    </Container>
   );
 };
 
