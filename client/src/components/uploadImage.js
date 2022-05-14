@@ -82,13 +82,15 @@ const UploadImage = ({ setAnalysisInfo, analysisInfo }) => {
   return (
     <Container maxW={"container.md"} mt="10" p="4" centerContent={"true"}>
       <VStack spacing="25px">
-        <Heading size="2xl">Video Sum</Heading>
+        <Heading size="2xl" color="#805858">
+          Video Sum
+        </Heading>
         <Text>Connect your video/lecture via link or file upload</Text>
-        <Box bg="blue.100" borderRadius={"md"} p="8">
+        <Box bg="#7DA5BE" borderRadius={"md"} p="8">
           <VStack spacing="25px">
             {!loading && (
               <>
-                <Text>Video Link</Text>
+                <Text color="white">Video Link</Text>
                 <Input
                   bg="white"
                   className="input-link"
@@ -100,7 +102,7 @@ const UploadImage = ({ setAnalysisInfo, analysisInfo }) => {
                 />
                 {!link && (
                   <Box>
-                    <Text>Select File</Text>
+                    <Text color="white">Select File</Text>
                     <input
                       className="no-display"
                       id="file-upload"

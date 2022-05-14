@@ -27,7 +27,7 @@ export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
-    <Box bg="blackAlpha.800">
+    <Box bg="#272727">
       <Flex
         color="white"
         minH={"60px"}
@@ -56,7 +56,7 @@ export default function Navbar() {
           <Text
             textAlign={useBreakpointValue({ base: "center", md: "left" })}
             fontFamily={"heading"}
-            color="white"
+            color="#FED766"
           >
             <Link href="/">
               <a>SumNotes</a>
@@ -77,8 +77,8 @@ export default function Navbar() {
 }
 
 const DesktopNav = () => {
-  const linkColor = "white";
-  const linkHoverColor = "white";
+  const linkColor = "#FED766";
+  const linkHoverColor = "#FED766";
   const popoverContentBgColor = useColorModeValue("white", "gray.800");
 
   return (
