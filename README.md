@@ -1,4 +1,4 @@
-##Problem Statement
+## Problem Statement
 Students struggle to focus on watching videos for school, especially those who are tactile learners or hard of hearing. Therefore, our team created the program, _SumNotes_, to help students who prefer linguistic ways of learning to read videos instead.
 
 **Solution:** Our program converts the video into an audio file. Using an API, _SumNotes_ converts the audio file into a readable text format. This program saves time for students and helps with assignments that require watching a video before starting it.
@@ -10,7 +10,7 @@ Our teachers tried their best to continue making learning fun and educational. T
 
 The inspiration behind _SumNotes_ came when we realized that we could save time and improve our understanding by reading a summary of the video, rather than watching it. Other students using our application can also complete their assignments more effectively.
 
-##What it does
+## What it does
 _SumNotes_ takes in a video link or a downloaded video (.mp4) and converts it into an audio file. Within minutes, our program analyzes the audio and transcripts it into a text format. 
 
 Then, the user is able to view a summary of the video, including the dialogue from the video's presenter. The user can also search for keywords found in the transcript. As an added feature, the user can send the summary pdf to themselves via email.
