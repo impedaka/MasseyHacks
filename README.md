@@ -1,3 +1,6 @@
+# SumNOtes
+![alt](https://challengepost-s3-challengepost.netdna-ssl.com/photos/production/software_photos/001/931/178/datas/original.png)
+
 ## Problem Statement
 Students struggle to focus on watching videos for school, especially those who are tactile learners or hard of hearing. Therefore, our team created the program, _SumNotes_, to help students who prefer linguistic ways of learning to read videos instead.
 
