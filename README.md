@@ -19,7 +19,7 @@ _SumNotes_ takes in a video link or a downloaded video (.mp4) and converts it in
 Then, the user is able to view a summary of the video, including the dialogue from the video's presenter. The user can also search for keywords found in the transcript. As an added feature, the user can send the summary pdf to themselves via email.
 
 ## How we built it
-For our tech stack, we used react.js and flask. As for APIs, we used Twillio/Sendgrid and AssemblyAI. As for design, we used chakra-UI and Figma. We also used the power of friendship and rainbows
+For our tech stack, we used react.js and flask. As for APIs, we used Twillio/Sendgrid and AssemblyAI. As for design, we used chakra-UI and Figma. We also used the power of friendship and rainbows.
 
 ## Challenges we ran into
 While using Sendgrid/Twilio for our app, we accidentally made our secret key public by committing our changes onto GitHub. We couldn't get the email thing to work, and we didn't know why since the code seemed correct. Later in the day, we realized that our account was suspended for making the key public and that was why we couldn't use the API. The solution was to make a new account and make a new secret key and it worked :D
@@ -28,6 +28,7 @@ We also faced problems with connecting the frontend and the backend since we did
 
 ## Accomplishments that we're proud of
 Having a project for MasseyHacks lol
+Building a functional application with real-world benefits
 
 ## What we learned
 We learned how to use Twilio/SendGrid and AssemblyAI and work together :D
