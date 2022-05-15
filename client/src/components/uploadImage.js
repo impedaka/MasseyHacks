@@ -115,7 +115,7 @@ const UploadImage = ({ setAnalysisInfo, analysisInfo }) => {
                 {link && (
                   <>
                     <Button
-                      bg="green.100"
+                      bg="#C2C693"
                       className="choose-file-button"
                       onClick={handleYoutubeLink}
                     >
@@ -126,9 +126,9 @@ const UploadImage = ({ setAnalysisInfo, analysisInfo }) => {
               </>
             )}
             {loading && (
-              <div>
-                <label className="loading-message">{loadingMessage}</label>
-              </div>
+              <Box>
+                <Text color="white">{loadingMessage}</Text>
+              </Box>
             )}
           </VStack>
         </Box>

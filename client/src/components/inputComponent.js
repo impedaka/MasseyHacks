@@ -1,9 +1,10 @@
+import { Button, HStack, Input } from "@chakra-ui/react";
 import React from "react";
 
 const InputComponent = (props) => {
   return (
-    <div>
-      <input
+    <HStack>
+      <Input
         type="text"
         value={props.value}
         placeholder={props.placeholder}
@@ -12,9 +13,11 @@ const InputComponent = (props) => {
         }}
       />
       {props.showButton && (
-        <label onClick={props.handlerButton}>{props.buttonText}</label>
+        <Button bg="#C2C693" onClick={props.handlerButton}>
+          {props.buttonText}
+        </Button>
       )}
-    </div>
+    </HStack>
   );
 };
 

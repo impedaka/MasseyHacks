@@ -1,3 +1,12 @@
+import {
+  Box,
+  Button,
+  Container,
+  Heading,
+  HStack,
+  Text,
+  VStack,
+} from "@chakra-ui/react";
 import React, { useState, useEffect } from "react";
 import InputComponent from "./inputComponent";
 import SearchFilter from "./searchFilter";
@@ -36,24 +45,19 @@ const Transcript = ({ analysisInfo }) => {
   };
 
   return (
-    <div>
-      <h2></h2>
-      <div>
-        <button style={{ marginLeft: 20 }} onClick={() => setButtonType(1)}>
-          Chapter Summary
-        </button>
-        <button style={{ marginRight: 20 }} onClick={() => setButtonType(2)}>
-          Transcript
-        </button>
-      </div>
-      <div>
-        <div style={{ marginLeft: 20 }}>
+    <Container minWidth="container.md">
+      <VStack>
+        <HStack>
+          <Button bg="#C2C693" onClick={() => setButtonType(1)}>
+            Summary
+          </Button>
+          <Button bg="#C2C693" onClick={() => setButtonType(2)}>
+            Transcript
+          </Button>
           <SearchFilter
             originalList={originalResultData}
             setFilteredList={setFilterResultData}
           />
-        </div>
-        <div style={{ marginRight: 20 }}>
           <InputComponent
             value={email}
             placeholder={"Enter email to send copy..."}
@@ -63,43 +67,49 @@ const Transcript = ({ analysisInfo }) => {
             handlerInput={handleEmailInput}
             showButton={true}
           />
-        </div>
-      </div>
-      {buttonType === 1 && (
-        <div>
-          {analysisInfo["chapters"].map((item) => {
-            return (
-              <div>
-                <h3 className="chapter-heading">{item["gist"]}</h3>
-                <p className="paragraph-text">{item["summary"]}</p>
-              </div>
-            );
-          })}
-        </div>
-      )}
+        </HStack>
+        {buttonType === 1 && (
+          <div>
+            {analysisInfo["chapters"].map((item) => {
+              return (
+                <Box bg="#7DA5BE" p="4" borderRadius={"md"}>
+                  <Heading color="white">{item["gist"]}</Heading>
+                  <Text color="white">{item["summary"]}</Text>
+                </Box>
+              );
+            })}
+          </div>
+        )}
 
-      {buttonType === 2 && (
-        <div className="transcript-body-container">
-          {filterResultData.map((item) => {
-            const list = item["labels"][0]["label"].split(">");
-            return (
-              <div className="paragraph-card">
-                <p className="paragraph-text">{item["text"]}</p>
-                <div className="bubbles-container">
-                  {list.map((topic) => {
-                    return (
-                      <div className="bubble-wrapper">
-                        <p className="bubble-text">{topic}</p>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      )}
-    </div>
+        {buttonType === 2 && (
+          <Box>
+            {filterResultData.map((item) => {
+              const list = item["labels"][0]["label"].split(">");
+              return (
+                <>
+                  <VStack bg="#7DA5BE" p="4" borderRadius={"md"}>
+                    <Text color="white">{item["text"]}</Text>
+                    <HStack>
+                      {list.map((topic) => {
+                        return (
+                          <>
+                            <Button>
+                              <p className="bubble-text">{topic}</p>
+                            </Button>
+                          </>
+                        );
+                      })}
+                    </HStack>
+                  </VStack>
+                  <br />
+                </>
+              );
+            })}
+            <br />
+          </Box>
+        )}
+      </VStack>
+    </Container>
   );
 };
 
