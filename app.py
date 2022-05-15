@@ -58,33 +58,35 @@ def ytMp3():
     video = VideoFileClip(os.path.join(new_file))
     video.audio.write_audiofile(os.path.join(f'Content/attachment.mp3'))
     return {'message' :'Content/attachment.mp3'}
-@app.route('/email', methods = ['POST'])
-def emailSend():
-    #toEmail = request.json['toEmail']
-    sg = SendGridAPIClient(os.getenv("SENDGRID_API_KEY"))
-    from_email = Email("fruitwingteardrop.2000@gmail.com")
-    to_email = To("qinfengyu123@gmail.com")
-    print(from_email)
-    subject = "Sending with SendGrid is Fun"
-    content = Content("text/plain", "and easy to do anywhere, even with Python")
-    mail = Mail(from_email, to_email, subject, content)
-    #with open('output.pdf', 'rb') as f:
-   #     data = f.read()
-    #    f.close()
-    #encoded_file = base64.b64encode(data).decode()
 
-   # attachedFile = Attachment(
-    #FileContent(encoded_file),
-    #FileName('attachment.pdf'),
-    #FileType('application/pdf'),
-    #Disposition('attachment')
-    #)
-   # message.attachment = attachedFile
-    response = sg.client.mail.send.post(request_body=mail.get())
+@app.route('/email', methods = ['POST'])
+
+def emailSend():
+    toEmail = request.json['toEmail']
+    message = Mail(
+        from_email='fruitwingteardrop.2000@gmail.com ',
+        to_emails=toEmail,
+        subject='Curated notes :) ',
+        html_content='As you requested here it is!')
+    with open('output.pdf', 'rb') as f:
+        data = f.read()
+        f.close()
+    encoded_file = base64.b64encode(data).decode()
+
+    attachedFile = Attachment(
+    FileContent(encoded_file),
+    FileName('attachment.pdf'),
+    FileType('application/pdf'),
+    Disposition('attachment')
+    )
+    message.attachment = attachedFile
+    sg = SendGridAPIClient(os.getenv("SENDGRID_API_KEY"))
+    response = sg.send(message)
     print(response.status_code)
     print(response.body)
     print(response.headers)
     return {'message': "Email Sent - Powered by Twillio"}
+
 @app.route('/assemblyAI', methods = ['POST'])
 def assemblyAI():
     filename = request.json['filename']

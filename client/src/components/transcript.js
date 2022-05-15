@@ -47,7 +47,7 @@ const Transcript = ({ analysisInfo }) => {
   return (
     <Container minWidth="container.md">
       <VStack>
-        <HStack>
+        <HStack mb="4">
           <Button bg="#C2C693" onClick={() => setButtonType(1)}>
             Summary
           </Button>
@@ -69,31 +69,36 @@ const Transcript = ({ analysisInfo }) => {
           />
         </HStack>
         {buttonType === 1 && (
-          <div>
+          <Box p="4" border="1px" borderRadius={"md"}>
             {analysisInfo["chapters"].map((item) => {
               return (
-                <Box bg="#7DA5BE" p="4" borderRadius={"md"}>
-                  <Heading color="white">{item["gist"]}</Heading>
-                  <Text color="white">{item["summary"]}</Text>
-                </Box>
+                <>
+                  <Box>
+                    <Heading color="#33658A">{item["gist"]}</Heading>
+                    <Text>{item["summary"]}</Text>
+                  </Box>
+                  <br />
+                </>
               );
             })}
-          </div>
+          </Box>
         )}
 
         {buttonType === 2 && (
-          <Box>
+          <Box border="1px" p="4" borderRadius={"md"}>
             {filterResultData.map((item) => {
               const list = item["labels"][0]["label"].split(">");
               return (
                 <>
-                  <VStack bg="#7DA5BE" p="4" borderRadius={"md"}>
-                    <Text color="white">{item["text"]}</Text>
+                  <VStack>
+                    <Text>{item["text"]}</Text>
                     <HStack>
                       {list.map((topic) => {
                         return (
                           <>
-                            <Button>{topic}</Button>
+                            <Button bg="#7DA5BE" color="white">
+                              #{topic}
+                            </Button>
                           </>
                         );
                       })}

@@ -34,8 +34,6 @@ export default function Navbar() {
         py={{ base: 2 }}
         px={{ base: 4 }}
         borderBottom={1}
-        borderStyle={"solid"}
-        borderColor={useColorModeValue("gray.200", "gray.900")}
         align={"center"}
       >
         <Flex
@@ -56,6 +54,7 @@ export default function Navbar() {
           <Text
             textAlign={useBreakpointValue({ base: "center", md: "left" })}
             fontFamily={"heading"}
+            fontSize="lg"
             color="#FED766"
           >
             <Link href="/">
@@ -90,7 +89,7 @@ const DesktopNav = () => {
               <Link
                 p={2}
                 href={navItem.href ?? "#"}
-                fontSize={"sm"}
+                fontSize={"lg"}
                 fontWeight={500}
                 color={linkColor}
                 _hover={{
@@ -236,7 +235,7 @@ interface NavItem {
 const NAV_ITEMS: Array<NavItem> = [
   {
     label: "Video Sum",
-    href: "#",
+    href: "/MasseyHacks",
   },
   {
     label: "Speech Sum",

@@ -18,8 +18,14 @@ import hero from "./Assets/hero.png";
 import bg from "./Assets/bg.png";
 export default function Homepage() {
   return (
-    <Box>
-      <Box bg="#8AC4CD" minHeight="100vh">
+    <Box bg="#8AC4CD" minHeight="100vh">
+      <Box
+        w={"full"}
+        h={"100vh"}
+        backgroundImage={bg}
+        backgroundSize={"cover"}
+        backgroundPosition={"center center"}
+      >
         <Container maxW={"7xl"}>
           <Stack
             align={"center"}
