@@ -66,9 +66,9 @@ def emailSend():
     message = Mail(
         from_email='fruitwingteardrop.2000@gmail.com ',
         to_emails=toEmail,
-        subject='Curated notes :) ',
-        html_content='As you requested here it is!')
-    with open('output.pdf', 'rb') as f:
+        subject='Notes shared to you :D',
+        html_content="You're welcome!")
+    with open('ree.pdf', 'rb') as f:
         data = f.read()
         f.close()
     encoded_file = base64.b64encode(data).decode()

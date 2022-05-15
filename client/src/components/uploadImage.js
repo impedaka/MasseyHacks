@@ -120,10 +120,11 @@ const UploadImage = ({ setAnalysisInfo, analysisInfo }) => {
           )}
         </VStack>
       </Box>
-
-      <Button bg="#C2C693" onClick={handleYoutubeLink}>
-        Submit
-      </Button>
+      {!loading && (
+        <Button bg="#C2C693" onClick={handleYoutubeLink}>
+          Submit
+        </Button>
+      )}
       {analysisInfo && <div></div>}
     </>
   );
