@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/MasseyHacks/static/css/main.073c9b0a.css",
-    "main.js": "/MasseyHacks/static/js/main.1b8096ee.js",
-    "static/js/787.c4e7f8f9.chunk.js": "/MasseyHacks/static/js/787.c4e7f8f9.chunk.js",
-    "static/media/logo.svg": "/MasseyHacks/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "main.css": "/MasseyHacks/static/css/main.7fd90fa1.css",
+    "main.js": "/MasseyHacks/static/js/main.a0526e17.js",
+    "static/media/bg2.png": "/MasseyHacks/static/media/bg2.33cc30bbd6e4d8688648.png",
+    "static/media/bg.png": "/MasseyHacks/static/media/bg.2185037ffd61890b0c29.png",
+    "static/media/hero.png": "/MasseyHacks/static/media/hero.79db3502d8977a13c9f2.png",
     "index.html": "/MasseyHacks/index.html",
-    "main.073c9b0a.css.map": "/MasseyHacks/static/css/main.073c9b0a.css.map",
-    "main.1b8096ee.js.map": "/MasseyHacks/static/js/main.1b8096ee.js.map",
-    "787.c4e7f8f9.chunk.js.map": "/MasseyHacks/static/js/787.c4e7f8f9.chunk.js.map"
+    "main.7fd90fa1.css.map": "/MasseyHacks/static/css/main.7fd90fa1.css.map",
+    "main.a0526e17.js.map": "/MasseyHacks/static/js/main.a0526e17.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.1b8096ee.js"
+    "static/css/main.7fd90fa1.css",
+    "static/js/main.a0526e17.js"
   ]
 }
