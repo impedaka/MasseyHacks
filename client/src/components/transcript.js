@@ -93,9 +93,7 @@ const Transcript = ({ analysisInfo }) => {
                       {list.map((topic) => {
                         return (
                           <>
-                            <Button>
-                              <p className="bubble-text">{topic}</p>
-                            </Button>
+                            <Button>{topic}</Button>
                           </>
                         );
                       })}

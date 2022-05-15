@@ -93,7 +93,6 @@ const UploadImage = ({ setAnalysisInfo, analysisInfo }) => {
                 <Text color="white">Video Link</Text>
                 <Input
                   bg="white"
-                  className="input-link"
                   type="text"
                   value={link}
                   onChange={(e) => {
@@ -104,7 +103,6 @@ const UploadImage = ({ setAnalysisInfo, analysisInfo }) => {
                   <Box>
                     <Text color="white">Select File</Text>
                     <input
-                      className="no-display"
                       id="file-upload"
                       type="file"
                       accept=".mp4"
@@ -114,11 +112,7 @@ const UploadImage = ({ setAnalysisInfo, analysisInfo }) => {
                 )}
                 {link && (
                   <>
-                    <Button
-                      bg="#C2C693"
-                      className="choose-file-button"
-                      onClick={handleYoutubeLink}
-                    >
+                    <Button bg="#C2C693" onClick={handleYoutubeLink}>
                       Analyze
                     </Button>
                   </>
@@ -133,7 +127,7 @@ const UploadImage = ({ setAnalysisInfo, analysisInfo }) => {
           </VStack>
         </Box>
 
-        {analysisInfo && <div className="down-arrow"></div>}
+        {analysisInfo && <div></div>}
       </VStack>
     </Container>
   );
